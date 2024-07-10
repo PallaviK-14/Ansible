@@ -1,0 +1,14 @@
+---
+-name: install apache service
+ host: webserver1
+ become: yes
+ tasks:
+  -name: install httpd package
+   yum:
+    name: httpd
+    state : latest
+  -name: start httpd service
+   service:
+    name: httpd
+    state: started
+    enabled: yes

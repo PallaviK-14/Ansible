@@ -11,3 +11,10 @@
     name: httpd
     state: started
     enabled: yes
+   name: Update the default landing page
+      copy:
+        content: "<h1>You Are On Webserver 1!</h1>"
+        dest: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0644'
